@@ -635,17 +635,30 @@
 
         function generateOperations() {
             let ops = [];
-            for (let i = 0; i < 2; i++) {
+            
+            // Generación de Sumas (resultado distinto de 4)
+            while (ops.filter(o => o.type === 'suma').length < 2) {
                 let a = Math.floor(Math.random() * 10);
                 let maxB = 9 - a;
                 let b = Math.floor(Math.random() * (maxB + 1));
-                ops.push({ type: 'suma', n1: a, n2: b, opSymbol: '+', result: a + b });
+                let res = a + b;
+                
+                if (res !== 4) {
+                    ops.push({ type: 'suma', n1: a, n2: b, opSymbol: '+', result: res });
+                }
             }
-            for (let i = 0; i < 2; i++) {
+            
+            // Generación de Restas (resultado distinto de 4)
+            while (ops.filter(o => o.type === 'resta').length < 2) {
                 let a = Math.floor(Math.random() * 10);
                 let b = Math.floor(Math.random() * (a + 1));
-                ops.push({ type: 'resta', n1: a, n2: b, opSymbol: '-', result: a - b });
+                let res = a - b;
+                
+                if (res !== 4) {
+                    ops.push({ type: 'resta', n1: a, n2: b, opSymbol: '-', result: res });
+                }
             }
+
             return ops.sort(() => 0.5 - Math.random());
         }
 
