@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "mysql2": "^3.23.2",
+    "xlsx": "^0.18.5"
+  }
+}
