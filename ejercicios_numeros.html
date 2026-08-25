@@ -636,7 +636,7 @@
         function generateOperations() {
             let ops = [];
             
-            // Generación de Sumas (resultado distinto de 4)
+            
             while (ops.filter(o => o.type === 'suma').length < 2) {
                 let a = Math.floor(Math.random() * 10);
                 let maxB = 9 - a;
@@ -648,7 +648,6 @@
                 }
             }
             
-            // Generación de Restas (resultado distinto de 4)
             while (ops.filter(o => o.type === 'resta').length < 2) {
                 let a = Math.floor(Math.random() * 10);
                 let b = Math.floor(Math.random() * (a + 1));
